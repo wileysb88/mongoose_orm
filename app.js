@@ -1,9 +1,13 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+// need to load our DB before our controllers
+require('./db/database');
 
 
 // Had to change the below routes from ./routes/ to ./controllers/ as we change those names every time
